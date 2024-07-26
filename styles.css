@@ -10,14 +10,17 @@
 .container{
     
     height: 100vh;
-    background-color: #1d1d1d;
+    background-color: #042ec5;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-
+.resized-image {
+    width: 200px;
+    height: auto;
+}
 .sub-container {
 
     display: flex;
@@ -105,4 +108,89 @@ article.alert > div{
 .hidden{
     display: none;
 
+}
+
+
+.rose-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.bouquet {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    transform: scale(0.8);
+    animation: bloomBouquet 3s ease-in-out forwards;
+}
+
+.stem {
+    width: 5px;
+    height: 150px;
+    background-color: green;
+    position: relative;
+    animation: grow 3s ease-in-out forwards;
+}
+
+.leaf {
+    width: 30px;
+    height: 15px;
+    background-color: green;
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: bloom 1s ease-in-out forwards;
+}
+
+.leaf-left {
+    top: 50px;
+    left: -15px;
+}
+
+.leaf-right {
+    top: 70px;
+    right: -15px;
+}
+
+.flower {
+    width: 0;
+    height: 0;
+    border: 50px solid transparent;
+    border-bottom-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    top: -90px;
+    left: -45px;
+    transform: scale(0);
+    animation: bloom 2s ease-in-out 3s forwards;
+}
+
+@keyframes grow {
+    from {
+        height: 0;
+    }
+    to {
+        height: 150px;
+    }
+}
+
+@keyframes bloom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes bloomBouquet {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
 }
